@@ -1,0 +1,89 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    background-color: black;
+
+    .container {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        .Logo {
+            margin: 2px;
+            padding-left: 30px;
+            width: fit-content;
+            margin-bottom: 20px;
+
+            img {
+                border-radius: 170px;
+                margin-top: 40px;
+            }
+
+
+
+        }
+
+        h1 {
+            margin-left: -30px;
+            font-family: "Manrope", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 9rem;
+            color: rgb(18, 220, 242);
+            z-index: 0;
+        }
+
+
+    }
+
+    .Links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 90px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+
+        span {
+            margin: 20px;
+            text-decoration: none;
+            color: rgb(226, 226, 226);
+            padding: 15px;
+            border-radius: 8px;
+            transition-property: background-color, color;
+            transition-timing-function: ease-in-out;
+        }
+
+        span:hover {
+            background-color: rgb(76, 76, 76);
+            transition-duration: 300ms;
+        }
+
+        .link {
+            margin: 20px;
+            text-decoration: none;
+            color: rgb(226, 226, 226);
+            padding: 15px;
+            border-radius: 8px;
+            transition-property: background-color, color;
+            transition-timing-function: ease-in-out;
+        }
+
+        .link:hover {
+            background-color: rgb(76, 76, 76);
+            transition-duration: 300ms;
+        }
+
+        .link_write {
+            display: none;
+        }
+
+        width: fit-content;
+    }
+}

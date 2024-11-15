@@ -1,9 +1,14 @@
 import React from 'react'
+import Navbar from './Navbar'
+import './write.css'
+
 
 const Write = () => {
-    return (
-        <div>Write</div>
+    return (<>
+        <Navbar></Navbar>
+        <p>Write</p>
+    </>
     )
 }
 
-export default Write
+export default Write;

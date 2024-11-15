@@ -1,0 +1,36 @@
+.reg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: auto;
+    background-color: #b9e7e7;
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+            padding: 10px;
+            height: 40px;
+            width: 140px;
+            margin: 40px;
+            border: none;
+            background-color: teal;
+            cursor: pointer;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+    h1 {
+        font-size: 40px;
+        color: teal;
+        margin-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        padding-left: 30%;
+        letter-spacing: 5px;
+    }
+}
