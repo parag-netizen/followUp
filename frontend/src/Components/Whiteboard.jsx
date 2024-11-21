@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Components/Menu.css'
+import '../Components/Whiteboard.css'
 
 const Whiteboard = () => {
     return (
