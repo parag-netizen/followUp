@@ -6,7 +6,10 @@ import { MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import Whiteboard from './Whiteboard';
 
+
 const SinglePost = () => {
+
+
 
     const x = 'https://images.pexels.com/photos/2526935/pexels-photo-2526935.jpeg'
     const y = 'https://images.pexels.com/photos/5599289/pexels-photo-5599289.jpeg'
@@ -29,7 +32,9 @@ const SinglePost = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe doloremque debitis explicabo adipisci molestiae perspiciatis, dignissimos mollitia hic sunt quos tempora. Delectus ipsum earum ipsa eveniet repellat mollitia iste!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe doloremque debitis explicabo adipisci molestiae perspiciatis, dignissimos mollitia hic sunt quos tempora. Delectus ipsum earum ipsa eveniet repellat mollitia iste!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe doloremque debitis explicabo adipisci molestiae perspiciatis, dignissimos mollitia hic sunt quos tempora. Delectus ipsum earum ipsa eveniet repellat mollitia iste!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe doloremque debitis explicabo adipisci molestiae perspiciatis, dignissimos mollitia hic sunt quos tempora. Delectus ipsum earum ipsa eveniet repellat mollitia iste!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe doloremque debitis explicabo adipisci molestiae perspiciatis, dignissimos mollitia hic sunt quos tempora. Delectus ipsum earum ipsa eveniet repellat mollitia iste!</p>
             </div>
             <div className='menu'>
-                <Whiteboard></Whiteboard>
+                <Whiteboard >
+
+                </Whiteboard>
             </div>
         </div>
     </>
