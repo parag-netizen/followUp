@@ -12,22 +12,51 @@
     justify-content: end;
     gap: 5px;
     backdrop-filter: blur(3px);
+    transition-property: transform;
+    transition: duration 1s;
+
+    .imgtxt {
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: beige;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    .txtbox {
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 20px;
+        left: 70px;
+        color: beige;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    .expand {
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: beige;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
 
     .diagramBox {
-        height: 850px;
+        margin-top: 15px;
+        height: 830px;
         max-width: inherit;
+        color: black;
     }
-}
-
-.expand {
-    font-size: 30px;
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: beige;
-    cursor: pointer;
 }
 
 .minimize {
@@ -40,4 +69,5 @@
     color: beige;
     cursor: pointer;
     display: none;
+    margin-bottom: 5px;
 }

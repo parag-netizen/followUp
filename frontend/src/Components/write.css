@@ -1,4 +1,93 @@
-p {
-    font-size: small;
-    color: azure;
+.single {
+    display: flex;
+    position: absolute;
+    left: 5%;
+    right: 10%;
+    gap: 50px;
+    padding: 30px;
+    max-width: 1700px;
+
+    .content_singlePage {
+
+        max-width: 1000px;
+        min-width: 700px;
+        z-index: 1;
+
+        img {
+            width: fit-content;
+            height: 400px;
+            border-radius: 50px;
+        }
+
+        h1 {
+            color: white;
+            font: 42px;
+        }
+
+        p {
+            color: white;
+            font-size: 24px;
+            text-align: justify;
+        }
+
+        .user {
+            margin: 30px;
+            color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                background-color: black;
+                border: none;
+                margin-top: 13px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .edit_Button {
+
+                    cursor: pointer;
+                    color: rgb(255, 255, 255);
+                    background-color: black;
+                    width: 35px;
+                    height: 35px;
+                    font-size: 35px;
+                    margin-left: 0px;
+                    border-radius: 10px;
+                }
+            }
+
+            .info {
+                padding-right: 30px;
+
+                span {
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 18px;
+                    padding-top: 0px;
+                    margin-top: 5px;
+                }
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+}
+
+.pane {
+    z-index: 2;
+    position: absolute;
+    top: 33%;
+    right: 5%;
 }

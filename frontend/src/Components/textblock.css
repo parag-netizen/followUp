@@ -1,0 +1,27 @@
+.txtnode {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(254, 229, 229);
+    width: 100px;
+    height: 100px;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.7);
+
+    .notesheading {
+        font-size: larger;
+        color: white;
+        background: transparent;
+        border-style: none;
+        outline: none;
+    }
+
+    .textcontent {
+        font-size: small;
+        color: white;
+        background: transparent;
+        height: 300px;
+        field-sizing: content;
+        border-style: 1px solid transparent;
+        outline: none;
+    }
+}
