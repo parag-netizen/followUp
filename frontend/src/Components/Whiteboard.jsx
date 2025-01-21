@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import '../Components/Whiteboard.css';
-import { addEdge, Background, Controls, MiniMap, Position, ReactFlow, useNodesState } from '@xyflow/react';
+import { addEdge, Background, Controls, Handle, MiniMap, Position, ReactFlow, useNodesState } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { FiMaximize } from "react-icons/fi";
 import { FiMinimize } from "react-icons/fi";
 import { BsFileEarmarkRichtextFill } from "react-icons/bs";
 import { BsFillFileTextFill } from "react-icons/bs";
 import Textblock from './textblock';
+import Txtimg from './txtimg';
+import { MdDragHandle } from 'react-icons/md';
 
 const Whiteboard = () => {
 
@@ -14,32 +16,64 @@ const Whiteboard = () => {
     const expand1 = useRef(null)
     const minimize = useRef(null)
 
-    const initialnodes = [{
-        id: '1',
-        data: {
-            label: "node 1"
+    const initialnodes = [
+        {
+            id: '1',
+            data: {
+                label: "node 1"
+            },
+            position: { x: 0, y: 0 },
+            type: 'textblock',
         },
-        position: { x: 0, y: 0 },
-        type: 'textblock',
-    },
+        {
+            id: '2',
+            data: {
+                label: "node 1"
+            },
+            position: { x: 100, y: 100 },
+            type: 'textblock',
+        },
+        {
+            id: '3',
+            data: {
+                label: "node 3"
+            },
+            position: { x: 100, y: 100 },
+        },
+        {
+            id: '4',
+            data: {
+                label: "node 4"
+            },
+            position: { x: 100, y: 100 },
+        },
+        {
+            id: '5',
+            data: {
+                label: "node 5"
+            },
+            position: { x: 100, y: 100 },
+        },
     ]
 
     const nodeTypes = {
         'textblock': Textblock,
+        'imgtxt': Txtimg,
     }
 
     const initialedges = [{
-        id: '1-2', source: "1", target: "2", animated: true
+        id: '1-5', source: '1-2-3-4', target: '2-3-4-5', animated: true,
     }]
 
     const [nodes, setNodes, onNodesChange] = useNodesState(initialnodes)
     const [edges, setEdges, onEdgesChange] = useNodesState(initialedges)
 
+    console.log(ReactFlow)
 
     const onConnect = useCallback((Connection) => {
         const edge = { ...Connection, animated: true, id: `${edges.length} + 1` }
         setEdges(prevEdges => addEdge(edge, prevEdges))
-    }, [])
+    }, [edges])
 
     const expand_box = () => {
         Diagrampane.current.style.width = '1900px'
