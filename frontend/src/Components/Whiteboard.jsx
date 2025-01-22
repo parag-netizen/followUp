@@ -15,6 +15,7 @@ const Whiteboard = () => {
     const Diagrampane = useRef(null)
     const expand1 = useRef(null)
     const minimize = useRef(null)
+    const diagramBox = useRef(null)
 
     const initialnodes = [
         {
@@ -39,6 +40,7 @@ const Whiteboard = () => {
                 label: "node 3"
             },
             position: { x: 100, y: 100 },
+            type: 'textblock',
         },
         {
             id: '4',
@@ -46,13 +48,7 @@ const Whiteboard = () => {
                 label: "node 4"
             },
             position: { x: 100, y: 100 },
-        },
-        {
-            id: '5',
-            data: {
-                label: "node 5"
-            },
-            position: { x: 100, y: 100 },
+            type: 'textblock',
         },
     ]
 
@@ -77,6 +73,8 @@ const Whiteboard = () => {
 
     const expand_box = () => {
         Diagrampane.current.style.width = '1900px'
+        Diagrampane.current.style.height = '2300px'
+        diagramBox.current.style.height = '2300px'
         expand1.current.style.display = 'none';
         minimize.current.style.display = 'flex';
         console.log(Diagrampane.current.style.width)
@@ -99,7 +97,7 @@ const Whiteboard = () => {
             <div ref={minimize} className='minimize' id='mini' onClick={min_box}>
                 <FiMinimize />
             </div>
-            <div className='diagramBox'>
+            <div ref={diagramBox} className='diagramBox'>
                 <ReactFlow
                     nodes={nodes}
                     edges={edges}
