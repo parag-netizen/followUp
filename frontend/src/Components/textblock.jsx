@@ -4,8 +4,6 @@ import { EdgeText, Handle, Position } from '@xyflow/react'
 
 const Textblock = (props) => {
 
-    console.log(props)
-
     return (
         <div className='txtnode'>
             <input className='notesheading' type="text" />

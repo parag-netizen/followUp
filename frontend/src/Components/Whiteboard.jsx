@@ -58,14 +58,13 @@ const Whiteboard = () => {
     }
 
     const initialedges = [{
-        id: '1-5', source: '1-2-3-4', target: '2-3-4-5', animated: true,
+        id: '1', source: '', target: '', animated: true,
     }]
 
     const [nodes, setNodes, onNodesChange] = useNodesState(initialnodes)
     const [edges, setEdges, onEdgesChange] = useNodesState(initialedges)
 
-    console.log(ReactFlow)
-
+    console.log(edges)
     const onConnect = useCallback((Connection) => {
         const edge = { ...Connection, animated: true, id: `${edges.length} + 1` }
         setEdges(prevEdges => addEdge(edge, prevEdges))
