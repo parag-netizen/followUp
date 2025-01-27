@@ -104,9 +104,11 @@ const Whiteboard = () => {
                     onEdgesChange={onEdgesChange}
                     onConnect={onConnect}
                     nodeTypes={nodeTypes}
+                    zoomOnScroll={false}
                     fitView>
                     <Background />
                     <Controls />
+                    z
                 </ReactFlow>
             </div>
         </div>
