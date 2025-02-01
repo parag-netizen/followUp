@@ -1,9 +1,14 @@
 import React from 'react'
 import Navbar from './Navbar';
 import '../Components/Home.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Home = () => {
+    const navigate = useNavigate();
+    const clicker = () => {
+        navigate('/singlepost')
+    }
     const post = [{
         id: 1,
         title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, consequatur ipsam architecto cum nihil praesentium quidem eius, ab vel officiis accusantium dicta cupiditate delectus consectetur eos explicabo culpa laboriosam ad.',
@@ -32,8 +37,7 @@ const Home = () => {
                             <div className='content'>
                                 <div className='report'>
                                     <h1>{post.title}</h1>
-                                    <p>{post.desc}<Link className='link_singlePost' to="/singlePost">  read more</Link></p>
-
+                                    <p>{post.desc}<a className='link_singlePost' onClick={clicker}>  read more</a></p>
                                 </div>
                                 <div className='img'>
                                     <img src={post.img} height={400} width={350} />
