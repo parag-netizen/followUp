@@ -1,10 +1,19 @@
+.error {
+    display: none;
+}
+
+.setError {
+    display: flex;
+    font-size: 25px;
+    color: white;
+}
+
 .Diagram__pane {
     border-radius: 20px;
     color: blanchedalmond;
     border: 4px solid gray;
     height: 850px;
     width: 600px;
-    margin-top: 90px;
     z-index: 2;
     display: flex;
     flex-direction: column;

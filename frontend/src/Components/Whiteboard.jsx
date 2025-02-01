@@ -7,8 +7,7 @@ import { FiMinimize } from "react-icons/fi";
 import { BsFileEarmarkRichtextFill } from "react-icons/bs";
 import { BsFillFileTextFill } from "react-icons/bs";
 import Textblock from './textblock';
-import Txtimg from './txtimg';
-import { MdDragHandle } from 'react-icons/md';
+import Txtimg from './Txtimg';
 
 const Whiteboard = () => {
 
@@ -23,35 +22,10 @@ const Whiteboard = () => {
             data: {
                 label: "node 1"
             },
-            position: { x: 0, y: 0 },
-            type: 'textblock',
-        },
-        {
-            id: '2',
-            data: {
-                label: "node 1"
-            },
-            position: { x: 100, y: 100 },
-            type: 'textblock',
-        },
-        {
-            id: '3',
-            data: {
-                label: "node 3"
-            },
-            position: { x: 100, y: 100 },
-            type: 'textblock',
-        },
-        {
-            id: '4',
-            data: {
-                label: "node 4"
-            },
-            position: { x: 100, y: 100 },
+            position: { x: 50, y: 50 },
             type: 'textblock',
         },
     ]
-
     const nodeTypes = {
         'textblock': Textblock,
         'imgtxt': Txtimg,
@@ -61,10 +35,11 @@ const Whiteboard = () => {
         id: '1', source: '', target: '', animated: true,
     }]
 
+    const [error, setError] = useState('error')
     const [nodes, setNodes, onNodesChange] = useNodesState(initialnodes)
     const [edges, setEdges, onEdgesChange] = useNodesState(initialedges)
 
-    console.log(edges)
+
     const onConnect = useCallback((Connection) => {
         const edge = { ...Connection, animated: true, id: `${edges.length} + 1` }
         setEdges(prevEdges => addEdge(edge, prevEdges))
@@ -76,20 +51,57 @@ const Whiteboard = () => {
         diagramBox.current.style.height = '2300px'
         expand1.current.style.display = 'none';
         minimize.current.style.display = 'flex';
-        console.log(Diagrampane.current.style.width)
+        (Diagrampane.current.style.width)
     }
 
     const min_box = () => {
         Diagrampane.current.style.width = '600px'
+        Diagrampane.current.style.height = '800px'
+        diagramBox.current.style.height = '800px'
         minimize.current.style.display = 'none';
         expand1.current.style.display = 'flex';
-        console.log(Diagrampane.current.style.width)
+        (Diagrampane.current.style.width)
     }
 
-    return (
+    const addtextbox = () => {
+        if (nodes.length < 7) {
+            setNodes([...nodes, {
+                id: `${nodes.length + 1}`,
+                data: {
+                    label: "node 1"
+                },
+                position: { x: nodes[nodes.length - 1].position.x + 50, y: nodes[nodes.length - 1].position.y + 50 },
+                type: 'textblock',
+            }])
+        }
+        else {
+            setError('setError');
+        }
+    }
+
+    const addimgtextbox = () => {
+        if (nodes.length < 7) {
+            setNodes([...nodes, {
+                id: `${nodes.length + 1}`,
+                data: {
+                    label: "node 1"
+                },
+                position: { x: nodes[nodes.length - 1].position.x + 50, y: nodes[nodes.length - 1].position.y + 50 },
+                type: 'imgtxt',
+            }])
+        }
+        else {
+            setError('setError');
+        }
+    }
+
+
+
+    return (<>
+        <p className={error}>Maximum 5 nodes are allowed per page.</p>
         <div ref={Diagrampane} className='Diagram__pane'>
-            <div className='imgtxt'><BsFileEarmarkRichtextFill /></div>
-            <div className='txtbox'><BsFillFileTextFill /></div>
+            <div className='imgtxt' onClick={addimgtextbox}><BsFileEarmarkRichtextFill /></div>
+            <div className='txtbox' onClick={addtextbox}><BsFillFileTextFill /></div>
             <div ref={expand1} className='expand' id='exp' onClick={expand_box}>
                 <FiMaximize />
             </div>
@@ -108,10 +120,10 @@ const Whiteboard = () => {
                     fitView>
                     <Background />
                     <Controls />
-                    z
                 </ReactFlow>
             </div>
         </div>
+    </>
     )
 }
 

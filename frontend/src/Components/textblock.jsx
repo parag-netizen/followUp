@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './textblock.css'
 import { EdgeText, Handle, Position } from '@xyflow/react'
 
@@ -6,10 +6,10 @@ const Textblock = (props) => {
 
     return (
         <div className='txtnode'>
-            <input className='notesheading' type="text" />
+            <div><input className='notesheading' type="text" /></div>
             <textarea className='textcontent' type="text" />
-            <Handle position={Position.Bottom} type='source' draggable='true'></Handle>
-            <Handle position={Position.Top} type='target' draggable='true'></Handle>
+            <Handle position={Position.Top} type="target" draggable='true' />
+            <Handle position={Position.Right} type='source' draggable='true' />
             <EdgeText></EdgeText>
         </div>
     )
