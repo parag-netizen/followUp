@@ -46,7 +46,7 @@ const Whiteboard = () => {
     }, [edges])
 
     const expand_box = () => {
-        Diagrampane.current.style.width = '1900px'
+        Diagrampane.current.style.width = '1800px'
         Diagrampane.current.style.height = '2300px'
         diagramBox.current.style.height = '2300px'
         expand1.current.style.display = 'none';
